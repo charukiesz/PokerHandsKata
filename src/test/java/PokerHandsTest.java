@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import model.Card;
+import com.techreturners.model.Card;
 
 public class PokerHandsTest {
 
@@ -13,16 +13,31 @@ public class PokerHandsTest {
     public void checkCanCreateCard(){
         //Arrange
         String input = "2D";
-        int value = 2;
-        char suit = 'D';
-        //Act
+        int valueExpected = 2;
+        char suitExpected = 'D';
+
+        //Further Arrange
         Card card = new Card(input);
-        //Assert
-        Assertions.assertEquals(2, card.getValue());
-        Assertions.assertEquals('D', card.getSuit());
+
+        //Assert and Act
+        Assertions.assertEquals(valueExpected, card.getValue());
+        Assertions.assertEquals(suitExpected, card.getSuit());
 
     }
 
-    
+    @Test
+    public void checkCanCreatePictureCardKing(){
+        //Arrange
+        String input = "KD";
+        int valueExpected = 13;
+        char suitExpected = 'D';
+
+        //Further Arrange
+        Card card = new Card(input);
+
+        //Assert and Act
+        Assertions.assertEquals(valueExpected, card.getValue());
+        Assertions.assertEquals(suitExpected, card.getSuit());
+    }
 
 }

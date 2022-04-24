@@ -1,4 +1,4 @@
-package model;
+package com.techreturners.model;
 
 public class PokerHands {
 
