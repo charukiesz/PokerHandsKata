@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Hand {
 
-   private ArrayList<Card> cards = new ArrayList<>(5);
+   public ArrayList<Card> cards = new ArrayList<>(5);
+    int highCard;
 
     public Hand (String[] input){
         for (int i = 0; i < input.length; i++) {
@@ -20,4 +21,5 @@ public class Hand {
     public char getSuit(int i) {
         return this.cards.get(i).getSuit();
     }
+
 }

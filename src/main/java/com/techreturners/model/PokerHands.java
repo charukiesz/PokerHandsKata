@@ -1,5 +1,7 @@
 package com.techreturners.model;
 
+import java.util.Arrays;
+
 public class PokerHands {
 
 
@@ -12,7 +14,36 @@ public class PokerHands {
     //Card class
     //Hand class
 
+    public  String player1;
+    public String player2;
+    public Hand player1Hand;
+    public Hand player2Hand;
 
+
+
+
+
+    public boolean isStraightFlush(Hand playerHand) {
+        char firstCard = playerHand.cards.get(0).getSuit();
+        boolean isStraight = true;
+        for (int i = 1; i < playerHand.cards.size(); i++) {
+            if (firstCard != playerHand.cards.get(i).getSuit()) {
+                isStraight = false;
+            }
+        }
+        int[] arr = new int[playerHand.cards.size()];
+        for (int i = 0; i < playerHand.cards.size(); i++) {
+            arr[i] = playerHand.cards.get(i).getValue();
+        }
+        Arrays.sort( arr );
+        for (int i=0; i<arr.length-1; i++)
+        {
+            if (arr[i]+1 != arr[i+1]) {
+                isStraight = false;
+            }
+        }
+        return isStraight;
+    }
 
 
 

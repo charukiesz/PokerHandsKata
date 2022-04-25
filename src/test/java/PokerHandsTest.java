@@ -1,5 +1,6 @@
 import com.techreturners.model.Hand;
 import com.techreturners.model.Card;
+import com.techreturners.model.PokerHands;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
@@ -94,5 +95,34 @@ public class PokerHandsTest {
         Assertions.assertEquals('D', hand.getSuit(4));
     }
 
-    
+    @Test
+    public void checkHandForRankConditionStraightFlush(){
+        //Arrange
+        String [] input = {"6C", "7C", "8C", "9C", "TC"};
+        Hand player1Hand = new Hand(input);
+        String player1;
+        PokerHands pokerHands = new PokerHands();
+
+        //Further Arrange
+
+        //Assert and Act
+       Assertions.assertTrue(pokerHands.isStraightFlush(player1Hand));
+    }
+
+    @Test
+    public void checkHandForRankConditionForNotStraightFlush(){
+        //Arrange
+        String [] input = {"6C", "7C", "4C", "9C", "TC"};
+        Hand player1Hand = new Hand(input);
+        String player1;
+        PokerHands pokerHands = new PokerHands();
+
+        //Further Arrange
+
+        //Assert and Act
+        Assertions.assertFalse(pokerHands.isStraightFlush(player1Hand));
+    }
+
+
 }
+

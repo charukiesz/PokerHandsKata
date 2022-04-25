@@ -35,7 +35,22 @@ public class Card {
         if (tempSuit == 'C' || tempSuit == 'D' || tempSuit == 'H' || tempSuit == 'S') {
             this.suit = tempSuit;
         }
-
+        switch(tempSuit) {
+            case 'C':
+                this.suit = tempSuit;
+                break;
+            case 'D':
+                this.suit = tempSuit;
+                break;
+            case 'H':
+                this.suit = tempSuit;
+                break;
+            case 'S':
+                this.suit = tempSuit;
+                break;
+            default:
+                this.suit = ' ';
+        }
 
     }
 
