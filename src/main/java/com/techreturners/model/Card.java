@@ -5,13 +5,13 @@ public class Card {
     private char suit;
 
     public Card(String input) {
-        this.suit = input.charAt(1);
-        char temp = input.charAt(0);
+        char tempValue = input.charAt(0);
+        char tempSuit = input.charAt(1);
 
-        if (Character.isDigit(temp)) {
+        if (Character.isDigit(tempValue)) {
             this.value = Character.getNumericValue(input.charAt(0));
         } else {
-            switch (temp){
+            switch (tempValue){
                 case 'T':
                     this.value = 10;
                     break;
@@ -31,6 +31,12 @@ public class Card {
                     this.value = 0;
             }
         }
+
+        if (tempSuit == 'C' || tempSuit == 'D' || tempSuit == 'H' || tempSuit == 'S') {
+            this.suit = tempSuit;
+        }
+
+
     }
 
     public char getSuit() {
@@ -40,4 +46,9 @@ public class Card {
     public int getValue() {
         return value;
     }
+
+
+
+
+
 }

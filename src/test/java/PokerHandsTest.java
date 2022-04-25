@@ -55,5 +55,19 @@ public class PokerHandsTest {
         Assertions.assertEquals(suitExpected, card.getSuit());
 
     }
+    @Test
+    public void checkCanCreateCardSuitSpade(){
+        //Arrange
+        String input = "2S";
+        int valueExpected = 2;
+        char suitExpected = 'S';
 
+        //Further Arrange
+        Card card = new Card(input);
+
+        //Assert and Act
+        Assertions.assertEquals(valueExpected, card.getValue());
+        Assertions.assertEquals(suitExpected, card.getSuit());
+
+    }
 }
