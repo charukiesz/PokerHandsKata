@@ -12,6 +12,9 @@ public class Card {
             this.value = Character.getNumericValue(input.charAt(0));
         } else {
             switch (temp){
+                case 'T':
+                    this.value = 10;
+                    break;
                 case 'J':
                     this.value = 11;
                     break;
