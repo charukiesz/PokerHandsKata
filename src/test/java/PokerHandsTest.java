@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Disabled;
 
 public class PokerHandsTest {
 
-    @Test
+   @Disabled
+   @Test
     public void setUp(){
         Assertions.assertEquals(true, true);
     }
@@ -94,30 +95,41 @@ public class PokerHandsTest {
         Assertions.assertEquals(13, hand.getValue(4));
         Assertions.assertEquals('D', hand.getSuit(4));
     }
+   @Test
+    public void checkCanCreateTwoPlayersFromInput(){
+        //Arrange
+       String input = "Black: 2H 4S 4C 2D 4H  White: 2S 8S AS QS 3S";
+        PokerHands pokerHands = new PokerHands(input);
+        String expectedResultBlack = "Black: 2H 4S 4C 2D 4H";
+        String expectedResultWhite = "White: 2S 8S AS QS 3S";
+
+        //Assert and Act
+        Assertions.assertEquals(expectedResultBlack, pokerHands.getPlayer1());
+        Assertions.assertEquals(expectedResultWhite, pokerHands.getPlayer2());
+
+
+    }
 
     @Test
     public void checkHandForRankConditionStraightFlush(){
         //Arrange
         String [] input = {"6C", "7C", "8C", "9C", "TC"};
         Hand player1Hand = new Hand(input);
-        String player1;
         PokerHands pokerHands = new PokerHands();
-
-        //Further Arrange
-
         //Assert and Act
-       Assertions.assertTrue(pokerHands.isStraightFlush(player1Hand));
+        Assertions.assertTrue(pokerHands.isStraightFlush(player1Hand));
     }
+
+
+
+
 
     @Test
     public void checkHandForRankConditionForNotStraightFlush(){
         //Arrange
         String [] input = {"6C", "7C", "4C", "9C", "TC"};
         Hand player1Hand = new Hand(input);
-        String player1;
         PokerHands pokerHands = new PokerHands();
-
-        //Further Arrange
 
         //Assert and Act
         Assertions.assertFalse(pokerHands.isStraightFlush(player1Hand));
