@@ -84,9 +84,17 @@ public class PokerHands {
 
 
     public boolean isFourOfAKind(Hand playerHand) {
-        for (int i=0; i < playerHand.cards.size(); i++) {
-            return true;
+        int firstCard = playerHand.cards.get(0).getValue();
+        boolean isFourOfAKind = true;
+        for (int i=1; i < playerHand.cards.size() - 1 ; i++) {
+            if (firstCard != playerHand.cards.get(i).getValue()) {
+                isFourOfAKind = false;
+            } else if (firstCard == playerHand.cards.get(i).getValue()) {
+                isFourOfAKind = true;
+            }
         }
+        return isFourOfAKind;
+    }
 
 //Method to check if hand is Full House (three cards with the same value and two of a pair)
 
@@ -102,6 +110,6 @@ public class PokerHands {
 
 //Method to check if hand is High Card (check for the highest card in the hand)
 
-return false;
-    }
+
+
 }

@@ -114,10 +114,10 @@ public class PokerHandsTest {
     public void checkHandForRankConditionStraightFlush(){
         //Arrange
         String [] input = {"6C", "7C", "8C", "9C", "TC"};
-        Hand player1Hand = new Hand(input);
+        Hand playerHand = new Hand(input);
         PokerHands pokerHands = new PokerHands();
         //Assert and Act
-        Assertions.assertTrue(pokerHands.isStraightFlush(player1Hand));
+        Assertions.assertTrue(pokerHands.isStraightFlush(playerHand));
     }
 
 
@@ -125,11 +125,11 @@ public class PokerHandsTest {
     public void checkHandForRankConditionForNotStraightFlush(){
         //Arrange
         String [] input = {"6C", "7C", "4C", "9C", "TC"};
-        Hand player1Hand = new Hand(input);
+        Hand playerHand = new Hand(input);
         PokerHands pokerHands = new PokerHands();
 
         //Assert and Act
-        Assertions.assertFalse(pokerHands.isStraightFlush(player1Hand));
+        Assertions.assertFalse(pokerHands.isStraightFlush(playerHand));
     }
 
 
@@ -137,12 +137,14 @@ public class PokerHandsTest {
     public void checkHandForRankConditionIsFourOfAKind(){
         //Arrange
         String [] input = {"6D", "6C", "6H", "6S", "2C"};
-        Hand player1Hand = new Hand(input);
+        Hand playerHand = new Hand(input);
         PokerHands pokerHands = new PokerHands();
 
         //Assert and Act
-        Assertions.assertTrue(pokerHands.isFourOfAKind(player1Hand));
+        Assertions.assertTrue(pokerHands.isFourOfAKind(playerHand));
     }
+
+
 
 }
 
