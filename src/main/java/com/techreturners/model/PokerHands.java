@@ -102,6 +102,6 @@ public class PokerHands {
 
 //Method to check if hand is High Card (check for the highest card in the hand)
 
-return true;
+return false;
     }
 }
