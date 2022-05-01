@@ -28,10 +28,9 @@ public class PokerHands {
     }
 
 //Constructor 2
-
     public PokerHands() {
     }
-
+//Getters
     public String getPlayer1() {
         return player1;
     }
@@ -40,6 +39,7 @@ public class PokerHands {
         return player2;
     }
 
+//Setters
     public void setPlayer1Hand() {
         this.player1Hand = parsePlayerToHand(this.player1);
     }
@@ -82,6 +82,12 @@ public class PokerHands {
 
 //Method to check if hand is Four of a Kind (four cards with the same value)
 
+
+    public boolean isFourOfAKind(Hand playerHand) {
+        for (int i=0; i < playerHand.cards.size(); i++) {
+            return true;
+        }
+
 //Method to check if hand is Full House (three cards with the same value and two of a pair)
 
 //Method to check if hand is Flush (five cards of the same suit)
@@ -96,7 +102,6 @@ public class PokerHands {
 
 //Method to check if hand is High Card (check for the highest card in the hand)
 
-
-
-
+return true;
+    }
 }

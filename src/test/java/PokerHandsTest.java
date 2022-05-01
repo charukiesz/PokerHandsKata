@@ -121,9 +121,6 @@ public class PokerHandsTest {
     }
 
 
-
-
-
     @Test
     public void checkHandForRankConditionForNotStraightFlush(){
         //Arrange
@@ -136,5 +133,19 @@ public class PokerHandsTest {
     }
 
 
+    @Test
+    public void checkHandForRankConditionIsFourOfAKind(){
+        //Arrange
+        String [] input = {"6D", "6C", "6H", "6S", "2C"};
+        Hand player1Hand = new Hand(input);
+        PokerHands pokerHands = new PokerHands();
+
+        //Assert and Act
+        Assertions.assertTrue(pokerHands.isFourOfAKind(player1Hand));
+    }
+
 }
+
+
+
 
